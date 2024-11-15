@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh's Portfolio</title>
+    <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+           
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            font-size: 16px;
+            line-height: 24px; 
+            background-color: #202020;
+            color: #e5e5e5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s; 
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 1170px;
+            margin: auto;
+        }
+
+        
+
+        .header-area {
+            padding: 25px 0;
+            transition: padding .3s;
+            position: relative;
+        }
+
+        .header-area.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+            background-color: #202020;
+            padding: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } 
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .logo .fa-bolt {
+            color: #fed700;
+            font-size: 19.5px;
+            margin-left: 10px;
+        }
+
+        .header ul {
+            display: flex;
+            align-items: center; 
+        }
+
+        .header ul li {
+            margin: 0 15px;
+        }
+
+        .header ul li a {
+            text-transform: capitalize;
+        }
+
+        .header ul li a:hover {
+            color: #fed700;
+        }
+
+        .header .menu_icon {
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+        }
+
+
+
+        .FirstElement {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5rem; 
+        } 
+
+        .profile-photo {
+            width: 400px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 15px solid #444444;
+            box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-text {
+            max-width: 750px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+
+        .profile-text h5 {
+            font-size: 14px;
+        }
+
+        .profile-text h1 {
+            color: #fed700;
+            font-size: 3rem; 
+        }
+
+        .profile-text p {
+            margin: 20px 0;
+        }
+
+        .profile-text .social i {
+            color: #e5e5e5;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: 0.5s;
+        }
+
+        .profile-text .social i:hover {
+            color: #fed700;
+            transform: rotate(360deg);
+        }
+
+        
+
+        .about-area {
+            padding-top: 130px;
+            background-color: #202020;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        
+        about-content {
+            flex-basis: 60%;
+        }
+
+        .about-content h4 {
+            color: #fed700;
+            font-size: 40px;
+            line-height: 70px;
+            text-transform: capitalize;
+        }
+
+        .about-content ul {
+            color: #fff;
+            text-align: justify;
+        }
+
+        .about-content ul li {
+            list-style-type: disc;
+            margin-bottom: 10px;
+        }
+
+        .about-skills {
+            flex-basis: 35%;
+        }
+
+        .about-skills ul li {
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .about-skills ul li:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        
+
+        .btn-group {
+            margin: 45px 0;
+        }
+
+        .btn-group .btn {
+            border-color: #d5d5d5;
+            color: #fff;
+            background-color: #333;
+            padding: 12px 25px;
+            margin: 5px 0;
+            margin-right: 7px;
+            border-radius: 30px;
+            border: 2px solid #e5e5e5;
+            box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+        }
+
+        .btn.active {
+            border-color: #fed700;
+        }
+
+        
+
+        .education-content .row {
+            display: flex;
+            border-radius: 5px;
+            height: auto;
+            margin-bottom: 250px;
+        }
+
+        .education-content .title {
+            color: #fed700;
+        }
+
+        .education-content .row .education,
+        .education-content .row .internship {
+            color: #e5e5e5;
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-top: 30px;
+        } 
+
+        .education-content h3.title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .education-content .row.timeline-box {
+            flex: 0 0 100%;
+            max-width: 100%;  
+        }
+
+        .education-content .row .timeline {
+            padding: 30px 15px;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        .education-content .row .timeline-item {
+            position: relative;
+            padding-left: 37px;
+            padding-bottom: 50px; 
+        }
+
+        .education-content .row .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .education-content .row .timeline-item::before {
+            content: "";
+            width: 1px;
+            position: absolute;
+            height: 100%;
+            left: 7px;
+            top: 0;
+            background-color: #fed700;  
+        }
+
+        .education-content .row .circle-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: #e5e5e5;
+        }
+
+        .education-content .row .timeline-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        
+
+        .project-content {
+            padding: 90px 0;
+        }
+
+        .project-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .project-title h4 {
+            text-transform: uppercase;
+            font-size: 40px;
+            line-height: 40px;
+            color: #fed700;
+            margin-bottom: 20px;
+        }
+
+        .project-title p {
+            color: #e5e5e5;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            color: #e5e5e5;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            width: 100%;
+            position: relative;
+            padding: 25px;
+            text-align: center;
+            flex-basis: 32%;
+            transition: .3s;
+        }
+
+        .project i {
+            background-color: #fed700;
+            width: 60px;
+            height: 60px;
+            color: #333;
+            font-size: 26px;
+            line-height: 60px;
+            border-radius: 50%;
+        }
+
+        .project h4 {
+            font-size: 26px;
+            text-transform: capitalize;
+            margin: 20px 0;
+        }
+
+        .project p {
+            text-align: justify;
+        }
+
+        .project:hover {
+            border-color: #fed700;
+        }
+
+
+        .contact-content {
+            padding: 100px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-content .contact-title h4 {
+            font-size: 40px;
+            text-transform: capitalize;
+            color: #fed700;
+            padding-bottom: 10px;
+        }
+
+        .contact-content .contact-title p {
+            padding-bottom: 20px;
+        }
+
+        .contact {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            margin-bottom: 10px;
+        }
+
+        .contact .submit {
+            width: auto;
+            background-color: #fed700;
+            padding: 10px 40px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .contact .submit:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        #msg {
+            color: #fff;
+            font-size: 20px;
+            margin-top: -8px;
+            display: block;
+        }
+
+       
+
+        .footer {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 15px 0 26px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer .message {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            font-size: 12px;
+        }
+
+       
+
+        @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media(max-width: 1050px) {
+            .FirstElement { 
+                flex-direction: column;
+                padding-top: 2rem;
+            }
+
+            .profile-text {
+                padding: 40px 0px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 999px) {
+            .container {
+                width: 750px;
+            } 
+        }  
+
+        @media only screen and (max-width: 767px) {
+            .container {
+                width: 350px;
+            }
+
+            .header .menu_icon {
+                display: block;
+            }
+
+            .header ul {
+                display: none;
+            }
+
+            .profile-text {
+                width: 350px;
+            }
+
+            .about {
+                flex-direction: column;
+                flex-basis: 100%;
+                margin-bottom: 30px;
+            }
+
+            .about-skills {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .education-content .row {
+                flex-direction: column;
+                height: auto;
+                margin-bottom: 50px;
+            }
+
+            .education-content .row .education,
+            .education-content .row .internship {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-top: 30px;
+            }
+
+            .project {
+                flex-basis: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-------------------------- Header Area -------------------------->
+    <header class="header-area">
+        <div class="container">
+            <div class="header">
+                <a href="" class="logo">
+                    
+                    <i class="fa fa-bolt"></i>
+                </a>
+                <ul class="navbar">
+                    <li><a href="#home"> Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">What I am doing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu_icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div> 
+    </header>
+
+    <!-------------------------- Home Page -------------------------->
+    <div class="FirstElement" id="home">
+        <div class="profile-photo">
+            <img src="download.jpg" alt="profile picture"> 
+        </div>
+        <div class="profile-text">
+            <h5>Hi I'm </h5><br>
+            <h1>Adarsh Verma</h1><br>
+            <p>Welcome to my portfolio website! I'm a passionate and aspiring software engineer with a strong desire to create innovative solutions and push the boundaries of technology. With a deep love for coding and problem-solving, I am constantly seeking opportunities to learn and grow in this ever-evolving field.</p>
+            <div class="btn-group">
+                <a href="mailto:vermaadarsh6740@gmail.com" class="btn">Contact</a>
+            </div>
+            <div class="social">
+                <a href="vermaadarsh6740@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/Adarsh2902V"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adarsh-verma-865315322/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------- About Section -------------------------->
+    <section class="about-area" id="about">
+        <div class="container">
+            <div class="about">
+                <div class="about-content">
+                    <h4>About Me</h4>
+                    <ul>
+                        <li>I am currently pursuing my Bachelor's Degree in Computer Science Engineering. I have built a foundation in software development, particularly in areas such as Python, HTML, and CSS. Also, I have a keen interest in the cybersecurity field where I would like to expand my career opportunities.</li>
+                        <li>My expertise in these areas allows me to approach projects with confidence and deliver high-quality results. I have a strong belief in the value of continuous learning and staying adaptable in the ever-evolving world of software engineering.</li>
+                        <li>I actively seek out opportunities to expand my knowledge and skills, embracing new technologies and approaches. Feel free to explore my profile and get in touch if you have any questions or any sort of advice.</li>
+                    </ul>
+                </div>
+                <div class="about-skills">
+                    <ul>
+                        <li>Name: Adarsh Verma</li>
+                        <li>Age: 19</li>     
+                        <li>From: India</li>
+                        <li>Email: vermaadarsh6740@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------- Education & Internship -------------->
+    <section class="education-content" id="education">
+        <div class="container">
+            <div class="row">
+                <div class="education">
+                    <h3 class="title">Education</h3>
+                    <div class="row">
+                        <div class="timeline-box">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">BTECH CSE</h3>
+                                    <h4 class="timeline-title">LOVELY PROFESSIONAL UNIVERSITY</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> 2024-2028
+                                    </h4>
+                                </div> 
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">PUC</h3>
+                                    <h4 class="timeline-title">THE ANSY SCHOOL</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> 2021-2024
+                                    </h4>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">MATRICULATE</h3>
+                                    <h4 class="timeline-title">THE ANSY SCHOOL</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> 2016-2021
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------- Projects -------------------------->
+    <section class="project-content" id="projects">
+        <div class="container">
+            <div class="project-title">
+                <h4>WHAT I AM DOING</h4>
+                <p>My current journey</p>
+            </div>
+            <div class="projects">
+                <div class="project">
+                    <i class="fa fa-coffee"></i>
+                    <h4>Skill Development</h4>
+                    <p>"I am building my web development skills, focusing on HTML, CSS, and JavaScript to create responsive and visually engaging websites. I'm gaining hands-on experience through projects, strengthening my understanding of core web technologies."</p>
+                </div>
+                <div class="project">
+                    <i class="fa fa-car"></i>
+                    <h4>Certifications</h4>
+                    <p>"I have completed certification programs in web development, demonstrating my proficiency in core technologies like HTML, CSS, and JavaScript. These certifications validate my foundational knowledge and commitment to developing high-quality, responsive web applications."</p>
+                </div>
+                <div class="project">
+                    <i class="fa fa-desktop"></i>
+                    <h4>Portfolio Website</h4>
+                    <p>"Created a portfolio website using HTML, CSS, and JavaScript. It serves as a platform to introduce myself, share my projects, and provide information about my education."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------- Contact Me -------------------------->
+
+    <section class="contact-content" id="contact">
+        <div class="container">
+            <div class="contact-title">
+                <h4>Contact Me</h4>
+                <p>Get In Touch</p>
+            </div>
+            <div class="contact">
+                <form name="submitToGoogleSheet">
+                    <input type="text" name="NAME" placeholder="Name" required>
+                    <input type="email" name="EMAIL" placeholder="Email" required>
+                    <input type="text" name="SUBJECT" placeholder="Subject">
+                    <textarea name="MESSAGE" placeholder="Message"></textarea>
+                    <input type="submit" value="Send Message" class="submit">
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------- Footer section -------------------------->
+    <footer class="footer">
+        <small class="message">Thanks for visiting and happy coding!</small>
+        <small class="copyright">&copy; Copyright 2024. All rights reserved.</small>
+    </footer>
+</body>
+</html>
